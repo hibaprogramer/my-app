@@ -7,9 +7,9 @@
             </div>
             <div class="modal-body">
                  <form wire:submit.prevent="save">
-                     <div class="row g-3 align-items-center">
-                        <div class="col-md-3"> 
-                        <label for="">المشروع</label>
+                    <div class="row g-3 align-items-center">
+                        <div class="col-md-3">
+                            <label for="">المشروع</label>
                         </div>
                         <div class="col-md-9">
                          <select class="form-select" wire:model="finance">
@@ -18,10 +18,9 @@
                                    <option value="{{ $finance->id }}">{{ $finance->proj_name }}</option>
                                @endforeach      
                          </select>
-                       
-                         <span class="text-danger"> @error('finance') {{ $message }}@enderror</span>
                         </div>
-                     </div>
+                         <span class="text-danger"> @error('finance') {{ $message }}@enderror</span>
+                    </div>
                      <div class="row g-3 align-items-center">
                          <div class="col-md-3">
                          <label for="">العقود</label>
@@ -67,21 +66,7 @@
                         </div>
                         <span class="text-danger"> @error('full_amnt_cont') {{ $message }}@enderror</span>
                     </div>
-                    <div class="row g-3 align-items-center">
-                        <div class="col-md-3">
-                        <label for="">نوع التمويل</label>
-                        </div>
-                        <div class="col-md-9">
-                        <select class="form-select" wire:model="finn_type">
-                            <option value="">اختر نوع التمويل</option>
-                            <option value="استثماري">استثماري</option>
-                            <option value="استثماري">تشغيلي</option>
-                            <option value="قروض">قروض</option>
-                            <option value="اخرى">اخرى</option>
-                        </select>
-                        </div>
-                        <span class="text-danger"> @error('finn_type') {{ $message }}@enderror</span>
-                    </div>
+                 
                     <div class="row g-3 align-items-center">
                         <div class="col-md-3">
                         <label for="">تاريخ انتهاء العقد</label>
