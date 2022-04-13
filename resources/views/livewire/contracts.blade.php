@@ -13,7 +13,6 @@
                 <th></th>
                 <th>اسم المشروع</th>
                 <th>موضوع العقد</th>
-                <th>نوع التمويل</th>
                 <th>تاريخ توقيع العقد</th>
                 <th>العملية</th>
             </tr>
@@ -25,7 +24,6 @@
                     <td><input type="checkbox" value="{{ $contract->id }}" wire:model="checkedContract"></td>
                     <td>{{ $contract->finance->proj_name }}</td>
                     <td>{{ $contract->cont_subj }}</td>
-                    <td>{{ $contract->finn_type }}</td>
                     <td>{{ $contract->cont_date }}</td>
                     <td>
                         <div class="btn-group">
