@@ -28,12 +28,13 @@
                 <tr class="{{ $this->IsChecked($finance->id) }}">
                     <td><input type="checkbox" value="{{ $finance->id }}" wire:model="checkedFinance"></td>
                     <td>{{ $finance->proj_name }}</td>
-                    <td>{{ $finance->cont_subj }}</td>
-                    <td>{{ $finance->finn_type }}</td>
-                    <td>{{ $finance->cont_date }}</td>
-                    <td>{{ $finance->cont_subj }}</td>
-                    <td>{{ $finance->finn_type }}</td>
-                    <td>{{ $finance->cont_date }}</td>
+                    <td>{{ $finance->assig_year }}</td>
+                    <td>{{ $finance->proj_cost }}</td>
+                    <td>{{ $finance->fina_type }}</td>
+                    <td>{{ $finance->fina_classfic }}</td>
+                    <td>{{ $finance->fina_amnt_loc }}</td>
+                    <td>{{ $finance->fina_amnt_for }}</td>
+                    
                     <td>
                         <div class="btn-group">
                             <button class="btn btn-danger btn-sm" wire:click='DeleteConfirm({{ $finance->id }})'>حذف</button>

@@ -7,71 +7,39 @@
             </div>
             <div class="modal-body">
                  <form wire:submit.prevent="save">
-                     <div class="row g-3 align-items-center">
-                        <div class="col-md-3"> 
-                        <label for="">المشروع</label>
+                    <div class="row g-3 align-items-center">
+                        <div class="col-md-3">
+                        <label for="">اسم المشروع</label>
                         </div>
                         <div class="col-md-9">
-                         <select class="form-select" wire:model="finance">
-                               <option value="">اختر المشروع</option>
-                               @foreach ($finances as $finance)
-                                   <option value="{{ $finance->id }}">{{ $finance->proj_name }}</option>
-                               @endforeach      
-                         </select>
-                         <span class="text-danger"> @error('finance') {{ $message }}@enderror</span>
+                        <input type="text" class="form-control" placeholder=" اسم المشروع" wire:model="proj_name">
                         </div>
-                     </div>
+                        <span class="text-danger"> @error('proj_name') {{ $message }}@enderror</span>
+                    </div>
                      <div class="row g-3 align-items-center">
                          <div class="col-md-3">
-                         <label for="">العقود</label>
+                         <label for="">سنة التخصيص</label>
                          </div>
                          <div class="col-md-9">
-                         <input type="text" class="form-control" placeholder="موضوع العقد" wire:model="cont_subj">
+                         <input type="date" class="form-control" placeholder="assig_year" wire:model="assig_year">
                          </div>
-                         <span class="text-danger"> @error('cont_subj') {{ $message }}@enderror</span>
+                         <span class="text-danger"> @error('assig_year') {{ $message }}@enderror</span>
                      </div>
-                     <div class="row g-3 align-items-center">
-                        <div class="col-md-3">
-                        <label for="">الجهة المستفيدة</label>
-                        </div>
-                        <div class="col-md-9">
-                        <input type="text" class="form-control" placeholder="الجهة المستفيدة" wire:model="benifit_comp">
-                        </div>
-                        <span class="text-danger"> @error('benifit_comp') {{ $message }}@enderror</span>
-                    </div>
                     <div class="row g-3 align-items-center">
                         <div class="col-md-3">
-                        <label for="">تاريخ العقد</label>
+                        <label for="">الكلفة</label>
                         </div>
                         <div class="col-md-9">
-                        <input type="date" class="form-control" placeholder="تاريخ العقد" wire:model="cont_date">
+                        <input type="text" class="form-control" placeholder="الكلفة"  wire:model="proj_cost">
                         </div>
-                        <span class="text-danger"> @error('cont_date') {{ $message }}@enderror</span>
-                    </div>
-                    <div class="row g-3 align-items-center">
-                        <div class="col-md-3">
-                        <label for="">رقم العقد</label>
-                        </div>
-                        <div class="col-md-9">
-                        <input type="text" class="form-control" placeholder="رقم العقد" wire:model="cont_num">
-                        </div>
-                        <span class="text-danger"> @error('cont_num') {{ $message }}@enderror</span>
-                    </div>
-                    <div class="row g-3 align-items-center">
-                        <div class="col-md-3">
-                        <label for="">المبلغ الكلي</label>
-                        </div>
-                        <div class="col-md-9">
-                        <input type="text" class="form-control" placeholder="المبلغ الكلي" wire:model="full_amnt_cont">
-                        </div>
-                        <span class="text-danger"> @error('full_amnt_cont') {{ $message }}@enderror</span>
+                        <span class="text-danger"> @error('proj_cost') {{ $message }}@enderror</span>
                     </div>
                     <div class="row g-3 align-items-center">
                         <div class="col-md-3">
                         <label for="">نوع التمويل</label>
                         </div>
                         <div class="col-md-9">
-                        <select class="form-select" wire:model="finn_type">
+                        <select class="form-select" wire:model="fina_type">
                             <option value="">اختر نوع التمويل</option>
                             <option value="استثماري">استثماري</option>
                             <option value="استثماري">تشغيلي</option>
@@ -79,61 +47,43 @@
                             <option value="اخرى">اخرى</option>
                         </select>
                         </div>
-                        <span class="text-danger"> @error('finn_type') {{ $message }}@enderror</span>
+                        <span class="text-danger"> @error('fina_type') {{ $message }}@enderror</span>
                     </div>
                     <div class="row g-3 align-items-center">
                         <div class="col-md-3">
-                        <label for="">تاريخ انتهاء العقد</label>
+                        <label for="">التبويب الحسابي </label>
                         </div>
                         <div class="col-md-9">
-                        <input type="date" class="form-control" placeholder="تاريخ انتهاء العقد" wire:model="cont_end_date">
+                        <input type="text" class="form-control" placeholder="التبويب الحسابي" wire:model="fina_classfic">
                         </div>
-                        <span class="text-danger"> @error('cont_end_date') {{ $message }}@enderror</span>
+                        <span class="text-danger"> @error('fina_classfic') {{ $message }}@enderror</span>
                     </div>
                     <div class="row g-3 align-items-center">
                         <div class="col-md-3">
-                        <label for="">الشركة المنفذة</label>
+                        <label for=""> تخصيص التبويب (العملة المحلية)</label>
                         </div>
                         <div class="col-md-9">
-                        <input type="text" class="form-control" placeholder="الشركة المنفذة" wire:model="excut_comp">
+                        <input type="text" class="form-control" placeholder="تخصيص التبويب (العملة المحلية)" wire:model="fina_amnt_loc">
                         </div>
-                        <span class="text-danger"> @error('excut_comp') {{ $message }}@enderror</span>
+                        <span class="text-danger"> @error('fina_amnt_loc') {{ $message }}@enderror</span>
                     </div>
                     <div class="row g-3 align-items-center">
                         <div class="col-md-3">
-                        <label for="">جنسية الشركة</label>
+                        <label for=""> تخصيص التبويب (العملة الاجنبية) </label>
                         </div>
                         <div class="col-md-9">
-                        <input type="text" class="form-control" placeholder="جنسية الشركة" wire:model="excut_comp_rel">
+                        <input type="text" class="form-control" placeholder="تخصيص التبويب (العملة الاجنبية)" wire:model="fina_amnt_for">
                         </div>
-                        <span class="text-danger"> @error('excut_comp_rel') {{ $message }}@enderror</span>
+                        <span class="text-danger"> @error('fina_amnt_for') {{ $message }}@enderror</span>
                     </div>
                     <div class="row g-3 align-items-center">
                         <div class="col-md-3">
-                        <label for="">شروط الدفع</label>
+                        <label for="">الملاحظات</label>
                         </div>
                         <div class="col-md-9">
-                        <input type="text" class="form-control" placeholder="شروط الدفع" wire:model="pay_condition">
+                        <input type="text" class="form-control" placeholder="الملاحظات"  wire:model="notes">
                         </div>
-                        <span class="text-danger"> @error('pay_condition') {{ $message }}@enderror</span>
-                    </div>
-                    <div class="row g-3 align-items-center">
-                        <div class="col-md-3">
-                        <label for="">النسبة</label>
-                        </div>
-                        <div class="col-md-9">
-                        <input type="text" class="form-control" placeholder="النسبة" wire:model="percentage">
-                        </div>
-                        <span class="text-danger"> @error('percentage') {{ $message }}@enderror</span>
-                    </div>
-                    <div class="row g-3 align-items-center">
-                        <div class="col-md-3">
-                        <label for="">الوصف</label>
-                        </div>
-                        <div class="col-md-9">
-                        <input type="text" class="form-control" placeholder="الوصف" wire:model="dscr">
-                        </div>
-                        <span class="text-danger"> @error('dscr') {{ $message }}@enderror</span>
+                        <span class="text-danger"> @error('notes') {{ $message }}@enderror</span>
                     </div>
                     
                      <div class="form-group mb-3">

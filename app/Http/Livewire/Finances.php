@@ -8,10 +8,10 @@ use App\Models\Contract;
 
 class Finances extends Component
 {   
-    public $proj_name,$assig_year,$proj_cost,$fina_type,$fina_classfic,$fina_amnt_loc,$fina_amnt_for;
+    public $proj_name,$assig_year,$proj_cost,$fina_type,$fina_classfic,$fina_amnt_loc,$fina_amnt_for,$notes;
     
 
-    public $upd_proj_name,$upd_assig_year,$upd_proj_cost,$upd_fina_type,$upd_fina_classfic,$upd_fina_amnt_loc,$upd_fina_amnt_for,$notes;
+    public $upd_proj_name,$upd_assig_year,$upd_proj_cost,$upd_fina_type,$upd_fina_classfic,$upd_fina_amnt_loc,$upd_fina_amnt_for,$upd_notes;
 
     public $listeners = ['delete', 'deleteCheckedFinance'];
     public $checkedFinance = [];
@@ -24,31 +24,29 @@ class Finances extends Component
         ]);
     }
 
-    public function OpenAddFinanceModal(){
+    public function OpenAddfinanceModal(){
         $this->proj_name='';
-        $this->benifit_comp='';
+        // $this->benifit_comp='';
         $this->assig_year='';
         $this->proj_cost='';
         $this->fina_type='';
         $this->fina_classfic='';
         $this->fina_amnt_loc='';
         $this->fina_amnt_for='';
-        $this->$notes='';
+        $this->notes='';
         
-        $this->dispatchBrowserEvent('OpenAddFinanceModal');
+        $this->dispatchBrowserEvent('OpenAddfinanceModal');
     }
 
     public function save(){
         $this->validate([
             'proj_name'=>'required',
-            'benifit_comp'=>'required',
             'assig_year'=>'required',
             'proj_cost'=>'required',
             'fina_type'=>'required',
             'fina_classfic'=>'required',
             'fina_amnt_loc'=>'required',
             'fina_amnt_for'=>'required',
-            'notes'=>'required'
             ]
         ,[
             'finance.required'=>'يجب اختيار احدى القارات',
@@ -57,18 +55,18 @@ class Finances extends Component
     
             $save =Finance::insert([
             'proj_name'=>$this->proj_name,
-            'benifit_comp'=>$this->benifit_comp,
+            //'benifit_comp'=>$this->benifit_comp,
             'assig_year'=>$this->assig_year,
             'proj_cost'=>$this->proj_cost,
-            'fina_type'=>$this->full_amnt_cont,
-            'fina_classfic'=>$this->fina_classfic,
+            'fina_type'=>$this->fina_type,//نوع التمويل 
+            'fina_classfic'=>$this->fina_classfic,//التبويب الحسابي
             'fina_amnt_loc'=>$this->fina_amnt_loc,
             'fina_amnt_for'=>$this->fina_amnt_for,
             'notes'=>$this->notes
             ]);
     
             if($save){
-                $this->dispatchBrowserEvent('CloseAddFinanceModal');
+                $this->dispatchBrowserEvent('CloseAddfinanceModal');
                 $this->checkedFinance = [];
             }
         
@@ -77,7 +75,7 @@ class Finances extends Component
     public function OpenEditFinanceModal($id){
         $info = Finance::find($id);
         $this->upd_proj_name = $info->proj_name;
-        $this->upd_benifit_comp = $info->benifit_comp;
+        //$this->upd_benifit_comp = $info->benifit_comp;
         $this->upd_assig_year = $info->assig_year;
         $this->upd_proj_cost = $info->proj_cost;
         $this->upd_fina_type = $info->full_fina_type;
@@ -94,7 +92,7 @@ class Finances extends Component
         $cid = $this->cid;
         $this->validate([
         'upd_proj_name'=>'required',
-        'upd_benifit_comp'=>'required',
+        //'upd_benifit_comp'=>'required',
         'upd_assig_year'=>'required',
         'upd_proj_cost'=>'required',
         'upd_full_amnt_cont'=>'required',
@@ -115,7 +113,7 @@ class Finances extends Component
 
         $update =Finance::find($cid)->update([
         'fin_id'=>$this->upd_proj_name,
-        'benifit_comp'=>$this->upd_benifit_comp,
+        //'benifit_comp'=>$this->upd_benifit_comp,
         'assig_year'=>$this->upd_assig_year,
         'proj_cost'=>$this->upd_proj_cost,
         'full_amnt_cont'=>$this->upd_full_amnt_cont,
