@@ -58,18 +58,12 @@
                        <span class="text-danger"> @error('upd_full_amnt_cont') {{ $message }}@enderror</span>
                    </div>
                    <div class="col-md-3">
-                       <label for="">نوع التمويل</label>
-                   </div>
-                   <div class="col-md-9">
-                       <select class="form-select" wire:model="upd_finn_type">
-                           <option value="">اختر نوع التمويل</option>
-                           <option value="استثماري">استثماري</option>
-                           <option value="استثماري">تشغيلي</option>
-                           <option value="قروض">قروض</option>
-                           <option value="اخرى">اخرى</option>
-                       </select>
-                       <span class="text-danger"> @error('upd_finn_type') {{ $message }}@enderror</span>
-                   </div>
+                    <label for="">نوع العملة </label>
+                </div>
+                <div class="col-md-9">
+                    <input type="text" class="form-control" placeholder="نوع العملة" wire:model="upd_finn_type">
+                    <span class="text-danger"> @error('upd_finn_type') {{ $message }}@enderror</span>
+                </div>
                    <div class="col-md-3">
                        <label for="">تاريخ انتهاء العقد</label>
                    </div>
