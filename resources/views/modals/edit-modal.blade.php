@@ -58,6 +58,13 @@
                        <span class="text-danger"> @error('upd_full_amnt_cont') {{ $message }}@enderror</span>
                    </div>
                    <div class="col-md-3">
+                    <label for="">نوع العملة </label>
+                </div>
+                <div class="col-md-9">
+                    <input type="text" class="form-control" placeholder="نوع العملة" wire:model="upd_finn_type">
+                    <span class="text-danger"> @error('upd_finn_type') {{ $message }}@enderror</span>
+                </div>
+                   <div class="col-md-3">
                        <label for="">تاريخ انتهاء العقد</label>
                    </div>
                    <div class="col-md-9">

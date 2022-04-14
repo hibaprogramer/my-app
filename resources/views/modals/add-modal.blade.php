@@ -66,6 +66,15 @@
                         </div>
                         <span class="text-danger"> @error('full_amnt_cont') {{ $message }}@enderror</span>
                     </div>
+                    <div class="row g-3 align-items-center">
+                        <div class="col-md-3">
+                        <label for=""> نوع العملة</label>
+                        </div>
+                        <div class="col-md-9">
+                        <input type="text" class="form-control" placeholder=" نوع العملة" wire:model="finn_type">
+                        </div>
+                        <span class="text-danger"> @error('finn_type') {{ $message }}@enderror</span>
+                    </div>
                  
                     <div class="row g-3 align-items-center">
                         <div class="col-md-3">

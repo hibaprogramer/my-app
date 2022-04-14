@@ -14,6 +14,7 @@
                 <th>اسم المشروع</th>
                 <th>موضوع العقد</th>
                 <th>تاريخ توقيع العقد</th>
+                <th>تاريخ انتهاء العقد</th>
                 <th>العملية</th>
             </tr>
             </thead>
@@ -25,6 +26,7 @@
                     <td>{{ $contract->finance->proj_name }}</td>
                     <td>{{ $contract->cont_subj }}</td>
                     <td>{{ $contract->cont_date }}</td>
+                    <td>{{ $contract->cont_end_date }}</td>
                     <td>
                         <div class="btn-group">
                             <button class="btn btn-danger btn-sm" wire:click='DeleteConfirm({{ $contract->id }})'>حذف</button>
