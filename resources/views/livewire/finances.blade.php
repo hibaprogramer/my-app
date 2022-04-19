@@ -4,7 +4,7 @@
     <button class="btn btn-primary btn-sm mb-3" wire:click="OpenAddfinanceModal()">اضافة مشروع جديد</button>
     <div>
         @if ($checkedFinance)
-            <button class="btn btn-danger" wire:click="deletefinances()">حذف المشاريع المؤشرة ({{ count($checkedfinance) }})</button>
+            <button class="btn btn-danger" wire:click="deleteFinances()">حذف المشاريع المؤشرة ({{ count($checkedFinance) }})</button>
         @endif
     </div>
     <table class="table table-hover table-responsive">
@@ -38,7 +38,7 @@
                     <td>
                         <div class="btn-group">
                             <button class="btn btn-danger btn-sm" wire:click='DeleteConfirm({{ $finance->id }})'>حذف</button>
-                            <button class="btn btn-success btn-sm" wire:click='OpenEditfinanceModal({{ $finance->id }})'>تعديل</button>
+                            <button class="btn btn-success btn-sm" wire:click='OpenEditFinanceModal({{ $finance->id }})'>تعديل</button>
                         </div>
                     </td>
                 </tr>

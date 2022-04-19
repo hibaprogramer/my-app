@@ -26,7 +26,7 @@ class Contracts extends Component
     }
 
     public function OpenAddContractModal(){
-        $this->finance='';
+        
         $this->benifit_comp='';
         $this->cont_date='';
         $this->cont_num='';
@@ -44,7 +44,7 @@ class Contracts extends Component
 
     public function save(){
         $this->validate([
-            'finance'=>'required',
+            
             'benifit_comp'=>'required',
             'cont_date'=>'required',
             'cont_num'=>'required',
