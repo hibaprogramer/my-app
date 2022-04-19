@@ -31,6 +31,7 @@ class Contracts extends Component
         $this->cont_date='';
         $this->cont_num='';
         $this->full_amnt_cont='';
+        $this->finn_type='';
         $this->cont_subj='';
         $this->cont_end_date='';
         $this->excut_comp='';
@@ -48,6 +49,7 @@ class Contracts extends Component
             'cont_date'=>'required',
             'cont_num'=>'required',
             'full_amnt_cont'=>'required',
+            'finn_type'=>'required',
             'cont_subj'=>'required',
             'cont_end_date'=>'required',
             'excut_comp'=>'required',
@@ -67,6 +69,7 @@ class Contracts extends Component
             'cont_date'=>$this->cont_date,
             'cont_num'=>$this->cont_num,
             'full_amnt_cont'=>$this->full_amnt_cont,
+            'finn_type'=>$this->finn_type,
             'cont_subj'=>$this->cont_subj,
             'cont_end_date'=>$this->cont_end_date,
             'excut_comp'=>$this->excut_comp,
@@ -112,6 +115,7 @@ class Contracts extends Component
         'upd_cont_date'=>'required',
         'upd_cont_num'=>'required',
         'upd_full_amnt_cont'=>'required',
+        'upd_finn_type'=>'required',
         'upd_cont_subj'=>'required',
         'upd_cont_end_date'=>'required',
         'upd_excut_comp'=>'required',
@@ -128,6 +132,7 @@ class Contracts extends Component
             'upd_cont_date'=>'required',
             'upd_cont_num'=>'required',
             'upd_full_amnt_cont'=>'required',
+            'upd_finn_type'=>'required',
             'upd_cont_subj'=>'required',
             'upd_cont_end_date'=>'required',
             'upd_excut_comp'=>'required',
@@ -143,6 +148,7 @@ class Contracts extends Component
         'cont_date'=>$this->upd_cont_date,
         'cont_num'=>$this->upd_cont_num,
         'full_amnt_cont'=>$this->upd_full_amnt_cont,
+        'finn_type'=>$this->upd_finn_type,
         'cont_subj'=>$this->upd_cont_subj,
         'cont_end_date'=>$this->upd_cont_end_date,
         'excut_comp'=>$this->upd_excut_comp,
