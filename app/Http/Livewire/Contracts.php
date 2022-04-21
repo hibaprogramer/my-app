@@ -26,7 +26,8 @@ class Contracts extends Component
     }
 
     public function OpenAddContractModal(){
-        
+        $this->finance='';
+        $this->finn_type='';
         $this->benifit_comp='';
         $this->cont_date='';
         $this->cont_num='';
@@ -47,6 +48,7 @@ class Contracts extends Component
             
             'benifit_comp'=>'required',
             'cont_date'=>'required',
+            'finn_type'=>'required',
             'cont_num'=>'required',
             'full_amnt_cont'=>'required',
             'finn_type'=>'required',
@@ -65,6 +67,7 @@ class Contracts extends Component
     
             $save =Contract::insert([
             'fin_id'=>$this->finance,
+            'finn_type'=>$this->finn_type,
             'benifit_comp'=>$this->benifit_comp,
             'cont_date'=>$this->cont_date,
             'cont_num'=>$this->cont_num,

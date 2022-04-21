@@ -7,14 +7,26 @@
     <title>المشاريع</title>
     <link rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap.rtl.min.css') }}">
     <link rel="stylesheet" href="{{ asset('sweetalert2/sweetalart2.min.css') }}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
+
+<!-- Styles -->
+<link rel="stylesheet" href="{{ asset('css/app.css') }}">
+
+<!-- Scripts -->
+<script src="{{ asset('js/app.js') }}" defer></script>
     @livewireStyles
 </head>
+
+@include('layouts.navigation')
+
+
 <body>
+
 
     <div class="container">
         <div class="row" style="margin-top: 45px">
             <div class="col-md-6 offset-md-3">
-                <h4>المشاريع</h4>
+                <h4>تمويل المشاريع</h4><br>
                 @livewire('finances')
 
             </div>
@@ -40,7 +52,7 @@
             alert('تمت اضافة المشروع جديد بنجاح');
        });
 
-       window.addEventListener('OpenEditfinanceModal', function(event){
+       window.addEventListener('OpenEditFinanceModal', function(event){
             $('.editfinance').find('span').html('');
             $('.editfinance').modal('show');
        });

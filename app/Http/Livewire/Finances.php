@@ -73,6 +73,7 @@ class Finances extends Component
     }
 
     public function OpenEditFinanceModal($id){
+        dd();
         $info = Finance::find($id);
         $this->upd_proj_name = $info->proj_name;
         //$this->upd_benifit_comp = $info->benifit_comp;
