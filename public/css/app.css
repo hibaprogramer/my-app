@@ -776,11 +776,19 @@ select {
 .w-6 {
   width: 1.5rem;
 }
+<<<<<<< HEAD
 .max-w-6xl {
   max-width: 72rem;
 }
 .max-w-xl {
   max-width: 36rem;
+=======
+.max-w-xl {
+  max-width: 36rem;
+}
+.max-w-6xl {
+  max-width: 72rem;
+>>>>>>> 4b20648d32e75bf047823305a251aee6243fd198
 }
 .max-w-7xl {
   max-width: 80rem;

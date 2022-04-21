@@ -7,8 +7,14 @@
     <title>العقود</title>
     <link rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap.rtl.min.css') }}">
     <link rel="stylesheet" href="{{ asset('sweetalert2/sweetalart2.min.css') }}">
+    <!-- Styles -->
+<link rel="stylesheet" href="{{ asset('css/app.css') }}">
+
+<!-- Scripts -->
+<script src="{{ asset('js/app.js') }}" defer></script>
     @livewireStyles
 </head>
+@include('layouts.navigation')
 <body>
 
     <div class="container">

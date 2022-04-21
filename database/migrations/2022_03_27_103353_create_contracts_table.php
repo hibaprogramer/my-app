@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('contracts', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('fin_id');
             $table->integer('continent_id')->nullable();
             $table->string('benifit_comp');//الجهة المستفيدة
             $table->date('cont_date');//رقم العقد
