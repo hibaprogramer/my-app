@@ -1,0 +1,1 @@
+<img src="img/moelc-logo.png">
