@@ -1,9 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\MainController;
-use App\Http\Controllers\MainController1;
-
 
 /*
 |--------------------------------------------------------------------------
@@ -20,7 +17,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
 
-Route::get('/countries',[MainController::class,'index']);
-Route::get('/contracts',[MainController1::class,'index']);
-Route::get('/finances',[MainController::class,'index']);
+require __DIR__.'/auth.php';
