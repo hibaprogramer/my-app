@@ -1,1 +1,1 @@
-<img src="img/moelc-logo.png">
+<img src="img/moelc-logo3.png">
