@@ -57,7 +57,7 @@
             $('.editfinance').modal('show');
        });
 
-       window.addEventListener('CloseEditfinanceModal', function(event){
+       window.addEventListener('CloseEditFinanceModal', function(event){
             $('.editfinance').find('span').html('');
             $('.editfinance').find('form')[0].reset();
             $('.editfinance').modal('hide');

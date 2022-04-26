@@ -5,14 +5,15 @@ namespace App\Http\Livewire;
 use Livewire\Component;
 use App\Models\Finance;
 use App\Models\Contract;
+use App\Models\Company;
 
 class Contracts extends Component
 {   
-    public $fin_id,$benifit_comp,$cont_date,$cont_num,$full_amnt_cont,$cont_subj,$cont_end_date,$finn_type,
-    $excut_comp,$excut_comp_rel,$pay_condition,$percentage,$dscr;
+    public $finance,$benifit_comp,$cont_date,$cont_num,$full_amnt_cont,$cont_subj,$cont_end_date,$finn_type,
+    $company,$excut_comp_rel,$pay_condition,$percentage,$dscr;
 
-    public $upd_fin_id,$upd_continent_id,$upd_benifit_comp,$upd_cont_date,$upd_cont_num,$upd_full_amnt_cont,$upd_cont_subj,$upd_cont_end_date,$upd_finn_type,
-    $upd_excut_comp,$upd_excut_comp_rel,$upd_pay_condition,$upd_percentage,$upd_dscr;
+    public $upd_finance,$upd_continent_id,$upd_benifit_comp,$upd_cont_date,$upd_cont_num,$upd_full_amnt_cont,$upd_cont_subj,$upd_cont_end_date,$upd_finn_type,
+    $upd_company,$upd_excut_comp_rel,$upd_pay_condition,$upd_percentage,$upd_dscr;
 
     public $listeners = ['delete', 'deleteCheckedContract'];
     public $checkedContract = [];
@@ -21,7 +22,8 @@ class Contracts extends Component
     {
         return view('livewire.contracts',[
             'finances'=>Finance::orderby('assig_year','asc')->get(),
-            'contracts'=>Contract::orderby('cont_date','asc')->get()
+            'contracts'=>Contract::orderby('cont_date','asc')->get(),
+            'companies'=>Company::orderby('comp_name','asc')->get()
         ]);
     }
 
@@ -35,7 +37,7 @@ class Contracts extends Component
         $this->finn_type='';
         $this->cont_subj='';
         $this->cont_end_date='';
-        $this->excut_comp='';
+        $this->company='';
         $this->pay_condition='';
         $this->percentage='';
         $this->excut_comp_rel='';
@@ -54,7 +56,7 @@ class Contracts extends Component
             'finn_type'=>'required',
             'cont_subj'=>'required',
             'cont_end_date'=>'required',
-            'excut_comp'=>'required',
+            'company'=>'required',
             'pay_condition'=>'required',
             'percentage'=>'required',
             'excut_comp_rel'=>'required',
@@ -75,13 +77,13 @@ class Contracts extends Component
             'finn_type'=>$this->finn_type,
             'cont_subj'=>$this->cont_subj,
             'cont_end_date'=>$this->cont_end_date,
-            'excut_comp'=>$this->excut_comp,
+            'excut_comp'=>$this->company,
             'excut_comp_rel'=>$this->excut_comp_rel,
             'pay_condition'=>$this->pay_condition,
             'percentage'=>$this->percentage,
             'dscr'=>$this->dscr
             ]);
-    
+            
             if($save){
                 $this->dispatchBrowserEvent('CloseAddContractModal');
                 $this->checkedContract = [];
@@ -99,7 +101,7 @@ class Contracts extends Component
         $this->upd_cont_subj = $info->cont_subj;
         $this->upd_finn_type = $info->finn_type;
         $this->upd_cont_end_date = $info->cont_end_date;
-        $this->upd_excut_comp = $info->excut_comp;
+        $this->upd_company = $info->excut_comp;
         $this->upd_excut_comp_rel = $info->excut_comp_rel;
         $this->upd_pay_condition = $info->pay_condition;
         $this->upd_percentage = $info->percentage;
@@ -121,7 +123,7 @@ class Contracts extends Component
         'upd_finn_type'=>'required',
         'upd_cont_subj'=>'required',
         'upd_cont_end_date'=>'required',
-        'upd_excut_comp'=>'required',
+        'upd_company'=>'required',
         'upd_pay_condition'=>'required',
         'upd_percentage'=>'required',
         'upd_excut_comp_rel'=>'required',
@@ -154,7 +156,7 @@ class Contracts extends Component
         'finn_type'=>$this->upd_finn_type,
         'cont_subj'=>$this->upd_cont_subj,
         'cont_end_date'=>$this->upd_cont_end_date,
-        'excut_comp'=>$this->upd_excut_comp,
+        'excut_comp'=>$this->upd_company,
         'pay_condition'=>$this->upd_pay_condition,
         'percentage'=>$this->upd_percentage,
         'excut_comp_rel'=>$this->upd_excut_comp_rel,

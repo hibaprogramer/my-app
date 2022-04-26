@@ -20,9 +20,6 @@ Route::get('/', function () {
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
-<<<<<<< HEAD
-
-=======
 
 Route::get('/finances', function () {
     return view('finances');
@@ -31,5 +28,4 @@ Route::get('/finances', function () {
 Route::get('/contracts', function () {
     return view('contracts');
 })->middleware(['auth'])->name('contracts');
->>>>>>> 4b20648d32e75bf047823305a251aee6243fd198
 require __DIR__.'/auth.php';
