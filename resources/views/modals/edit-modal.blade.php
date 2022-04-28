@@ -72,7 +72,7 @@
                        <span class="text-danger"> @error('upd_cont_end_date') {{ $message }}@enderror</span>
                    </div>
 
-                   <div class="row g-3 align-items-center">
+                   
                     <div class="col-md-3">
                         <label for="">الشركة المنفذة</label>
                     </div>
@@ -83,11 +83,10 @@
                                <option value="{{ $company->comp_id }}">{{ $company->comp_name }}</option>
                            @endforeach      
                      </select>
+                     <span class="text-danger"> @error('upd_company') {{ $message }}@enderror</span>
                     </div>
-                        <span class="text-danger"> @error('upd_company') {{ $message }}@enderror</span>
-                  </div>
-
-                   
+                        
+   
                    <div class="col-md-3">
                        <label for="">جنسية الشركة</label>
                    </div>
