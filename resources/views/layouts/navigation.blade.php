@@ -6,16 +6,16 @@
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
                     <a href="{{ route('dashboard') }}">
-                        <img src="img/moelc-logo2.png" style="hight:70%; width:70%;">
+                        <img src="img/moelc-logo3.png" style="hight:70%; width:70%;">
                     </a>
                 </div>
 
                 <!-- Navigation Links -->
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+               <!-- <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('الاشـعارات') }}
                     </x-nav-link>
-                </div>
+                </div>-->
             </div>
 
             <!-- Settings Dropdown -->
