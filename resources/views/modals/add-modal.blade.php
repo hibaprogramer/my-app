@@ -21,24 +21,7 @@
                         </div>
                          <span class="text-danger"> @error('finance') {{ $message }}@enderror</span>
                     </div>
-                     <div class="row g-3 align-items-center">
-                         <div class="col-md-3">
-                         <label for="">العقد</label>
-                         </div>
-                         <div class="col-md-9">
-                         <input type="text" class="form-control" placeholder="موضوع العقد" wire:model="cont_subj">
-                         </div>
-                         <span class="text-danger"> @error('cont_subj') {{ $message }}@enderror</span>
-                     </div>
-                     <div class="row g-3 align-items-center">
-                        <div class="col-md-3">
-                        <label for="">الجهة المستفيدة</label>
-                        </div>
-                        <div class="col-md-9">
-                        <input type="text" class="form-control" placeholder="الجهة المستفيدة" wire:model="benifit_comp">
-                        </div>
-                        <span class="text-danger"> @error('benifit_comp') {{ $message }}@enderror</span>
-                    </div>
+                     
                     <div class="row g-3 align-items-center">
                         <div class="col-md-3">
                         <label for="">تاريخ العقد</label>
@@ -99,44 +82,6 @@
                          </select>
                         </div>
                          <span class="text-danger"> @error('company') {{ $message }}@enderror</span>
-                    </div>
-
-                   
-                    <div class="row g-3 align-items-center">
-                        <div class="col-md-3">
-                        <label for="">جنسية الشركة</label>
-                        </div>
-                        <div class="col-md-9">
-                        <input type="text" class="form-control" placeholder="جنسية الشركة" wire:model="excut_comp_rel">
-                        </div>
-                        <span class="text-danger"> @error('excut_comp_rel') {{ $message }}@enderror</span>
-                    </div>
-                    <div class="row g-3 align-items-center">
-                        <div class="col-md-3">
-                        <label for="">شروط الدفع</label>
-                        </div>
-                        <div class="col-md-9">
-                        <input type="text" class="form-control" placeholder="شروط الدفع" wire:model="pay_condition">
-                        </div>
-                        <span class="text-danger"> @error('pay_condition') {{ $message }}@enderror</span>
-                    </div>
-                    <div class="row g-3 align-items-center">
-                        <div class="col-md-3">
-                        <label for="">النسبة</label>
-                        </div>
-                        <div class="col-md-9">
-                        <input type="text" class="form-control" placeholder="النسبة" wire:model="percentage">
-                        </div>
-                        <span class="text-danger"> @error('percentage') {{ $message }}@enderror</span>
-                    </div>
-                    <div class="row g-3 align-items-center">
-                        <div class="col-md-3">
-                        <label for="">الوصف</label>
-                        </div>
-                        <div class="col-md-9">
-                        <input type="text" class="form-control" placeholder="الوصف" wire:model="dscr">
-                        </div>
-                        <span class="text-danger"> @error('dscr') {{ $message }}@enderror</span>
                     </div>
                     
                      <div class="form-group mb-3">

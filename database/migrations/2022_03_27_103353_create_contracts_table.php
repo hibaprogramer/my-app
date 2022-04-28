@@ -16,19 +16,12 @@ return new class extends Migration
         Schema::create('contracts', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('fin_id');
-            $table->integer('continent_id')->nullable();
-            $table->string('benifit_comp');//الجهة المستفيدة
             $table->date('cont_date');//رقم العقد
-            $table->integer('cont_num');//تاريخ العقد
+            $table->integer('cont_num');//رقم العقد
+            $table->integer('finn_type');// نوع العملة
             $table->integer('full_amnt_cont');//المبلغ الكلي
-            $table->string('finn_type');//نوع العمل
-            $table->string('cont_subj');//موضوع العقد
             $table->date('cont_end_date');//تاريخ انتهاء العقد
-            $table->string('excut_comp');//الشركة المنفذة
-            $table->string('excut_comp_rel');//جنسية الشركة
-            $table->string('pay_condition');//شروط الدفع
-            $table->string('percentage');//النسبة
-            $table->string('dscr');//الملاحظات
+            $table->integer('excut_comp');//الشركة المنفذة
             $table->timestamps();
         });
     }

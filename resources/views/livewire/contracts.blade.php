@@ -12,7 +12,7 @@
             <tr>
                 <th></th>
                 <th>اسم المشروع</th>
-                <th>موضوع العقد</th>
+                <th>رقم العقد</th>
                 <th>تاريخ توقيع العقد</th>
                 <th>تاريخ انتهاء العقد</th>
                 <th>العملية</th>
@@ -24,7 +24,7 @@
                 <tr class="{{ $this->IsChecked($contract->id) }}">
                     <td><input type="checkbox" value="{{ $contract->id }}" wire:model="checkedContract"></td>
                     <td>{{ $contract->finance->proj_name }}</td>
-                    <td>{{ $contract->cont_subj }}</td>
+                    <td>{{ $contract->cont_num }}</td>
                     <td>{{ $contract->cont_date }}</td>
                     <td>{{ $contract->cont_end_date }}</td>
                     <td>
