@@ -23,7 +23,7 @@
                     </div>
                      <div class="row g-3 align-items-center">
                          <div class="col-md-3">
-                         <label for="">العقود</label>
+                         <label for="">العقد</label>
                          </div>
                          <div class="col-md-9">
                          <input type="text" class="form-control" placeholder="موضوع العقد" wire:model="cont_subj">
@@ -85,15 +85,23 @@
                         </div>
                         <span class="text-danger"> @error('cont_end_date') {{ $message }}@enderror</span>
                     </div>
+
                     <div class="row g-3 align-items-center">
                         <div class="col-md-3">
-                        <label for="">الشركة المنفذة</label>
+                            <label for="">الشركة المنفذة</label>
                         </div>
                         <div class="col-md-9">
-                        <input type="text" class="form-control" placeholder="الشركة المنفذة" wire:model="excut_comp">
+                         <select class="form-select" wire:model="company">
+                               <option value="">اختر الشركة</option>
+                               @foreach ($companies as $company)
+                                   <option value="{{ $company->comp_id }}">{{ $company->comp_name }}</option>
+                               @endforeach      
+                         </select>
                         </div>
-                        <span class="text-danger"> @error('excut_comp') {{ $message }}@enderror</span>
+                         <span class="text-danger"> @error('company') {{ $message }}@enderror</span>
                     </div>
+
+                   
                     <div class="row g-3 align-items-center">
                         <div class="col-md-3">
                         <label for="">جنسية الشركة</label>

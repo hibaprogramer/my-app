@@ -15,4 +15,8 @@ class Contract extends Model
     public function finance(){
         return $this->belongsTo(Finance::class,'fin_id','id');
     }
+    
+    public function company(){
+        return $this->belongsTo(Company::class,'excut_comp','comp_id');
+    }
 }

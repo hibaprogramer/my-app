@@ -71,13 +71,23 @@
                        <input type="date" class="form-control" placeholder="تاريخ انتهاء العقد" wire:model="upd_cont_end_date">
                        <span class="text-danger"> @error('upd_cont_end_date') {{ $message }}@enderror</span>
                    </div>
-                   <div class="col-md-3">
-                       <label for="">الشركة المنفذة</label>
-                   </div>
-                   <div class="col-md-9">
-                       <input type="text" class="form-control" placeholder="الشركة المنفذة" wire:model="upd_excut_comp">
-                       <span class="text-danger"> @error('upd_excut_comp') {{ $message }}@enderror</span>
-                   </div>
+
+                   <div class="row g-3 align-items-center">
+                    <div class="col-md-3">
+                        <label for="">الشركة المنفذة</label>
+                    </div>
+                    <div class="col-md-9">
+                     <select class="form-select" wire:model="upd_company">
+                           <option value="">اختر الشركة</option>
+                           @foreach ($companies as $company)
+                               <option value="{{ $company->comp_id }}">{{ $company->comp_name }}</option>
+                           @endforeach      
+                     </select>
+                    </div>
+                        <span class="text-danger"> @error('upd_company') {{ $message }}@enderror</span>
+                  </div>
+
+                   
                    <div class="col-md-3">
                        <label for="">جنسية الشركة</label>
                    </div>
