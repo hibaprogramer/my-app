@@ -86,7 +86,7 @@ class Contracts extends Component
     }
 
     public function update(){
-        $cid = $this->cid;
+        $cid = $this->id;
         $this->validate([
         'upd_finance'=>'required',
         'upd_cont_date'=>'required',
@@ -106,7 +106,7 @@ class Contracts extends Component
             'upd_excut_comp'=>'required',
         ]);
 
-        $update =Contract::find($cid)->update([
+        $update =Contract::find($id)->update([
         'fin_id'=>$this->upd_finance,
         'cont_date'=>$this->upd_cont_date,
         'cont_num'=>$this->upd_cont_num,

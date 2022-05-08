@@ -26,7 +26,7 @@ class Finances extends Component
 
     public function OpenAddfinanceModal(){
         $this->proj_name='';
-        // $this->benifit_comp='';
+        //$this->benifit_comp='';
         $this->assig_year='';
         $this->proj_cost='';
         $this->fina_type='';

@@ -22,20 +22,6 @@
                         </select>
                         <span class="text-danger"> @error('upd_finance') {{ $message }}@enderror</span>
                     </div>
-                    <div class="col-md-3">
-                        <label for="">العقود</label>
-                    </div>
-                    <div class="col-md-9">
-                        <input type="text" class="form-control" placeholder="موضوع العقد" wire:model="upd_cont_subj">
-                        <span class="text-danger"> @error('upd_cont_subj') {{ $message }}@enderror</span>
-                    </div>
-                    <div class="col-md-3">
-                       <label for="">الجهة المستفيدة</label>
-                    </div>
-                    <div class="col-md-9">
-                       <input type="text" class="form-control" placeholder="الجهة المستفيدة" wire:model="upd_benifit_comp">
-                       <span class="text-danger"> @error('upd_benifit_comp') {{ $message }}@enderror</span>
-                   </div>
                    <div class="col-md-3">
                        <label for="">تاريخ العقد</label>
                    </div>
@@ -85,36 +71,7 @@
                      </select>
                      <span class="text-danger"> @error('upd_company') {{ $message }}@enderror</span>
                     </div>
-                        
-   
-                   <div class="col-md-3">
-                       <label for="">جنسية الشركة</label>
-                   </div>
-                   <div class="col-md-9">
-                       <input type="text" class="form-control" placeholder="جنسية الشركة" wire:model="upd_excut_comp_rel">
-                       <span class="text-danger"> @error('upd_excut_comp_rel') {{ $message }}@enderror</span>
-                   </div>
-                   <div class="col-md-3">
-                       <label for="">شروط الدفع</label>
-                   </div>
-                   <div class="col-md-9">
-                       <input type="text" class="form-control" placeholder="شروط الدفع" wire:model="upd_pay_condition">
-                       <span class="text-danger"> @error('upd_pay_condition') {{ $message }}@enderror</span>
-                   </div>
-                   <div class="col-md-3">
-                       <label for="">النسبة</label>
-                   </div>
-                   <div class="col-md-9">
-                       <input type="text" class="form-control" placeholder="النسبة" wire:model="upd_percentage">
-                       <span class="text-danger"> @error('upd_percentage') {{ $message }}@enderror</span>
-                   </div>
-                   <div class="col-md-3">
-                       <label for="">الوصف</label>
-                   </div>
-                   <div class="col-md-9">
-                       <input type="text" class="form-control" placeholder="الوصف" wire:model="upd_dscr">
-                       <span class="text-danger"> @error('upd_dscr') {{ $message }}@enderror</span>
-                   </div>
+                    
                    <div class="col-md-3">
                     <button type="button" class="btn btn-danger btn-sm" data-bs-dismiss="modal">اغلاق</button>
                     <button type="submit" class="btn btn-primary btn-sm">حفظ التعديلات</button>
