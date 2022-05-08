@@ -10,6 +10,6 @@ class Finance extends Model
     use HasFactory;
     
     protected $fillable = [
-        'proj_name','assig_year','proj_cost','fina_type','fina_classfic','fina_amnt_loc','fina_amnt_for','notes' 
+        'proj_name','benifit_comp','assig_year','proj_cost','fina_type','fina_classfic','fina_amnt_loc','fina_amnt_for','notes' 
     ];
 }
