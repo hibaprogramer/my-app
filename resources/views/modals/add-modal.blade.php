@@ -54,7 +54,13 @@
                         <label for=""> نوع العملة</label>
                         </div>
                         <div class="col-md-9">
-                        <input type="text" class="form-control" placeholder=" نوع العملة" wire:model="finn_type">
+                            <select class="form-select" wire:model="finn_type">
+                                <option value="">اختر نوع العملة</option>
+                                <option value="دولار">دولار</option>
+                                <option value="دينار">دينار</option>
+                                <option value="ين">ين</option>
+                                <option value="اخرى">اخرى</option>
+                            </select>
                         </div>
                         <span class="text-danger"> @error('finn_type') {{ $message }}@enderror</span>
                     </div>

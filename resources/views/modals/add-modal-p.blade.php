@@ -25,15 +25,6 @@
                          </div>
                          <span class="text-danger"> @error('assig_year') {{ $message }}@enderror</span>
                      </div>
-                     <div class="row g-3 align-items-center">
-                        <div class="col-md-3">
-                        <label for="">الجهة المستفيدة</label>
-                        </div>
-                        <div class="col-md-9">
-                        <input type="text" class="form-control" placeholder="الجهة المستفيدة" wire:model="benifit_comp">
-                        </div>
-                        <span class="text-danger"> @error('benifit_comp') {{ $message }}@enderror</span>
-                    </div>
                     <div class="row g-3 align-items-center">
                         <div class="col-md-3">
                         <label for="">الكلفة</label>
