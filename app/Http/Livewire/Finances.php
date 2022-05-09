@@ -79,7 +79,7 @@ class Finances extends Component
         //$this->upd_benifit_comp = $info->benifit_comp;
         $this->upd_assig_year = $info->assig_year;
         $this->upd_proj_cost = $info->proj_cost;
-        $this->upd_fina_type = $info->full_fina_type;
+        $this->upd_fina_type = $info->fina_type;
         $this->upd_fina_classfic= $info->fina_classfic;
         $this->upd_fina_amnt_loc = $info->fina_amnt_loc;
         $this->upd_fina_amnt_for = $info->fina_amnt_for;
