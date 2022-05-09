@@ -84,6 +84,7 @@ class Finances extends Component
         $this->upd_fina_amnt_loc = $info->fina_amnt_loc;
         $this->upd_fina_amnt_for = $info->fina_amnt_for;
         $this->upd_notes = $info->notes;
+        $this->cid = $info->id;
         $this->dispatchBrowserEvent('OpenEditFinanceModal',[
             'id'=>$id
         ]);
@@ -120,7 +121,7 @@ class Finances extends Component
         'fina_type'=>$this->upd_fina_type,
         'fina_classfic'=>$this->upd_fina_classfic,
         'fina_amnt_loc'=>$this->upd_fina_amnt_loc,
-        'fina_amnt_for'=>$this->upd_cont_end_date,
+        'fina_amnt_for'=>$this->upd_fina_amnt_for,
         'notes'=>$this->upd_notes
         ]);
 

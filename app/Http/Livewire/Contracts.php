@@ -80,13 +80,14 @@ class Contracts extends Component
         $this->upd_finn_type = $info->finn_type;
         $this->upd_cont_end_date = $info->cont_end_date;
         $this->upd_company = $info->excut_comp;
+        $this->cid = $info->id;
         $this->dispatchBrowserEvent('OpenEditContractModal',[
             'id'=>$id
         ]);
     }
 
     public function update(){
-        $cid = $this->id;
+        $cid = $this->cid;
         $this->validate([
         'upd_finance'=>'required',
         'upd_cont_date'=>'required',
@@ -106,7 +107,7 @@ class Contracts extends Component
             'upd_excut_comp'=>'required',
         ]);
 
-        $update =Contract::find($id)->update([
+        $update =Contract::find($cid)->update([
         'fin_id'=>$this->upd_finance,
         'cont_date'=>$this->upd_cont_date,
         'cont_num'=>$this->upd_cont_num,
@@ -114,7 +115,6 @@ class Contracts extends Component
         'finn_type'=>$this->upd_finn_type,
         'cont_end_date'=>$this->upd_cont_end_date,
         'excut_comp'=>$this->upd_company,
-        'excut_comp_rel'=>$this->upd_excut_comp_rel,
         ]);
 
         if($update){
