@@ -13,6 +13,9 @@
                 <th></th>
                 <th>اسم المشروع</th>
                 <th>رقم العقد</th>
+                <th>مبلغ العقد</th>
+                <th>نوع العقد</th>
+                <th>الشركة المنفذة</th>
                 <th>تاريخ توقيع العقد</th>
                 <th>تاريخ انتهاء العقد</th>
                 <th>العملية</th>
@@ -25,6 +28,9 @@
                     <td><input type="checkbox" value="{{ $contract->id }}" wire:model="checkedContract"></td>
                     <td>{{ $contract->finance->proj_name }}</td>
                     <td>{{ $contract->cont_num }}</td>
+                    <td>{{ $contract->full_amnt_cont }}</td>
+                    <td>{{ $contract->finn_type }}</td>
+                    <td>{{ $contract->company->comp_name  }}</td>
                     <td>{{ $contract->cont_date }}</td>
                     <td>{{ $contract->cont_end_date }}</td>
                     <td>
