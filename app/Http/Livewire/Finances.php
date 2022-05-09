@@ -50,6 +50,7 @@ class Finances extends Component
             ]
         ,[
             'finance.required'=>'يجب اختيار احدى القارات',
+
         ]
         );
     
