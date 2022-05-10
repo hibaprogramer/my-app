@@ -50,6 +50,13 @@ class Finances extends Component
             ]
         ,[
             'finance.required'=>'يجب اختيار احدى القارات',
+            'proj_name.required'=>'اسم المشروع مطلوب',
+            'assig_year.required'=>'السنة مطلوبة',
+            'proj_cost.required'=>'الكلفة مطلوبة',
+            'fina_type.required'=>'يجب اختيار نوع التمويل',
+            'fina_classfic.required'=>'يجب اختيار تبويب ',
+            'fina_amnt_loc.required'=>'الرجاء ادخال تخصيص التبويب',
+            'fina_amnt_for.required'=>'الرجاء ادخال تخصيص التبويب',
 
         ]
         );
