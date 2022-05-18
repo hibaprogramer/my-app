@@ -90,6 +90,10 @@
                          <span class="text-danger"> @error('company') {{ $message }}@enderror</span>
                     </div>
                     
+                    
+                        <span class="text-danger"> @error('company') {{ $message }}@enderror</span>
+                   </div>
+
                      <div class="form-group mb-3">
                          <button type="button" class="btn btn-danger btn-sm col-md-3" data-bs-dismiss="modal">اغلاق</button>
                          <button type="submit" class="btn btn-primary btn-sm col-md-3">حفظ</button>
