@@ -17,7 +17,7 @@ return new class extends Migration
             $table->increments('id');
             $table->string('proj_name');
             $table->string('benifit_comp');//الجهة المستفيدة
-            $table->date('assig_year');
+            $table->string('assig_year');
             $table->integer('proj_cost');
             $table->string('fina_type');
             $table->string('fina_classfic');

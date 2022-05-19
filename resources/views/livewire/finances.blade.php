@@ -7,7 +7,8 @@
             <button class="btn btn-danger" wire:click="deleteFinances()">حذف المشاريع المؤشرة ({{ count($checkedFinance) }})</button>
         @endif
     </div>
-    <table class="table table-hover table-responsive">
+<div class="table-responsive-lg">
+    <table class="table table-hover table-bordered ">
         <thead class="thead-inverse">
             <tr>
                 
@@ -48,7 +49,7 @@
 
             </tbody>
     </table>
-
+</div>
     @include('modals.add-modal-p')
     @include('modals.edit-modal-p')
 </div>

@@ -13,7 +13,7 @@
                         <label for="">اسم المشروع</label>
                     </div>
                     <div class="col-md-9">
-                        <input type="text" class="form-control"  wire:model="upd_proj_name">  .
+                        <input type="text" class="form-control"  wire:model="upd_proj_name">
                         <span class="text-danger"> @error('upd_proj_name') {{ $message }}@enderror</span>
                     </div>
                     
@@ -21,7 +21,12 @@
                         <label for="">سنة التخصيص</label>
                     </div>
                     <div class="col-md-9">
-                        <input type="text" class="form-control"  wire:model="upd_assig_year">
+                        <select class="form-select"  wire:model="upd_assig_year">
+                            <option >اختر السنة </option>
+                            @for ($year = date('y') - 10 ; $year < date('y') + 10; $year++)
+                            <option value="{{ $year + 2000 }}"> {{ $year + 2000 }} </option>
+                            @endfor
+                       </select>
                         <span class="text-danger"> @error('upd_cont_subj') {{ $message }}@enderror</span>
                     </div>
                     
