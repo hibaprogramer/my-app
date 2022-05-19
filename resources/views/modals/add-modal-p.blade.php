@@ -20,9 +20,14 @@
                          <div class="col-md-3">
                          <label for="">سنة التخصيص</label>
                          </div>
-                         <div class="col-md-9">
-                         <input type="date" class="form-control" placeholder="assig_year" wire:model="assig_year">
-                         </div>
+                            <div class="col-md-9">
+                                <select class="form-select"  wire:model="assig_year">
+                                     <option >اختر السنة </option>
+                                     @for ($year = date('y') - 10 ; $year < date('y') + 10; $year++)
+                                     <option value="{{ $year + 2000 }}"> {{ $year + 2000 }} </option>
+                                     @endfor
+                                </select>
+                               </div>
                          <span class="text-danger"> @error('assig_year') {{ $message }}@enderror</span>
                      </div>
                     <div class="row g-3 align-items-center">

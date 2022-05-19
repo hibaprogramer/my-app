@@ -173,4 +173,12 @@ class Finances extends Component
     public function IsChecked($financeId){
         return in_array($financeId, $this->checkedFinance) ? 'bg-info text-white' : '';
     }
+
+
+    public function yearList(){
+
+        
+    }
+
+
 }

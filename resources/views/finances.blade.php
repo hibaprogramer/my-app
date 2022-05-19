@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap.rtl.min.css') }}">
     <link rel="stylesheet" href="{{ asset('sweetalert2/sweetalart2.min.css') }}">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
-
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
 <!-- Styles -->
 <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 
@@ -25,7 +25,7 @@
 
     <div class="container">
         <div class="row" style="margin-top: 45px">
-            <div class="col-md-6 offset-md-3">
+            <div class="col-md-9 offset-md-1">
                 <h4>تمويل المشاريع</h4><br>
                 @livewire('finances')
 
@@ -37,12 +37,14 @@
     <script src="{{ asset('bootstrap/js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('bootstrap/js/bootstrap.bundle.min.js') }}"></script>
     <script src="{{ asset('sweetalert2/sweetalert2.min.js') }}"></script>
+    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
     @livewireScripts
     <script>
         window.addEventListener('OpenAddfinanceModal', function(){
             $('.addfinance').find('span').html('');
             $('.addfinance').find('form')[0].reset();
             $('.addfinance').modal('show');
+            
         });
 
        window.addEventListener('CloseAddfinanceModal', function(){

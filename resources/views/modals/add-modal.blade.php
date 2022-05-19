@@ -21,16 +21,16 @@
                         </div>
                          <span class="text-danger"> @error('finance') {{ $message }}@enderror</span>
                     </div>
-                     
-                    <div class="row g-3 align-items-center">
+                    <div class="row  align-items-center">
                         <div class="col-md-3">
-                        <label for="">تاريخ العقد</label>
+                            <lable for=""> تاريخ العقد</label>
                         </div>
                         <div class="col-md-9">
-                        <input type="date" class="form-control" placeholder="تاريخ العقد" wire:model="cont_date">
+                        <input type="text" class="form-control" id="from" placeholder="تاريخ العقد" wire:model="cont_date">
                         </div>
                         <span class="text-danger"> @error('cont_date') {{ $message }}@enderror</span>
                     </div>
+                    
                     <div class="row g-3 align-items-center">
                         <div class="col-md-3">
                         <label for="">رقم العقد</label>
@@ -64,17 +64,15 @@
                         </div>
                         <span class="text-danger"> @error('finn_type') {{ $message }}@enderror</span>
                     </div>
-                 
-                    <div class="row g-3 align-items-center">
+                    <div class="row  align-items-center">
                         <div class="col-md-3">
-                        <label for="">تاريخ انتهاء العقد</label>
+                            <label for="">تاريخ انتهاء العقد</label>
                         </div>
                         <div class="col-md-9">
-                        <input type="date" class="form-control" placeholder="تاريخ انتهاء العقد" wire:model="cont_end_date">
+                        <input type="text" class="form-control" id="to" placeholder="تاريخ انتهاء العقد" wire:model="cont_end_date">
                         </div>
                         <span class="text-danger"> @error('cont_end_date') {{ $message }}@enderror</span>
                     </div>
-
                     <div class="row g-3 align-items-center">
                         <div class="col-md-3">
                             <label for="">الشركة المنفذة</label>
@@ -90,6 +88,10 @@
                          <span class="text-danger"> @error('company') {{ $message }}@enderror</span>
                     </div>
                     
+                    
+                        <span class="text-danger"> @error('company') {{ $message }}@enderror</span>
+                   </div>
+
                      <div class="form-group mb-3">
                          <button type="button" class="btn btn-danger btn-sm col-md-3" data-bs-dismiss="modal">اغلاق</button>
                          <button type="submit" class="btn btn-primary btn-sm col-md-3">حفظ</button>

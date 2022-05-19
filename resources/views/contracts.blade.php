@@ -7,11 +7,13 @@
     <title>العقود</title>
     <link rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap.rtl.min.css') }}">
     <link rel="stylesheet" href="{{ asset('sweetalert2/sweetalart2.min.css') }}">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
     <!-- Styles -->
 <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 
 <!-- Scripts -->
 <script src="{{ asset('js/app.js') }}" defer></script>
+
     @livewireStyles
 </head>
 @include('layouts.navigation')
@@ -31,12 +33,32 @@
     <script src="{{ asset('bootstrap/js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('bootstrap/js/bootstrap.bundle.min.js') }}"></script>
     <script src="{{ asset('sweetalert2/sweetalert2.min.js') }}"></script>
+    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
     @livewireScripts
     <script>
         window.addEventListener('OpenAddContractModal', function(){
             $('.addContract').find('span').html('');
             $('.addContract').find('form')[0].reset();
             $('.addContract').modal('show');
+            $("#from").datepicker({
+                showOn: "button",
+                buttonImage: "img/cal.jpeg",
+                buttonImageOnly: true,
+                dateFormat: "dd/mm/yy",
+                buttonText: "Select date",
+                onSelect: function(dateStr)
+                        {
+                            $("#to").datepicker("option", "minDate", dateStr)
+                        }
+            });
+
+            $("#to").datepicker({
+                showOn: "button",
+                buttonImage: "img/cal.jpeg",
+                buttonImageOnly: true,
+                dateFormat: "dd/mm/yy",
+                buttonText: "Select date"
+            });
         });
 
        window.addEventListener('CloseAddContractModal', function(){
