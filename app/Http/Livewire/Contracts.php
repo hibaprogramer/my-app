@@ -50,7 +50,15 @@ class Contracts extends Component
            
             ]
         ,[
-            'finance.required'=>'يجب اختيار احدى القارات',
+            'cont_date.required'=>'يجب اختيار احدى القارات',
+            'finn_type.required'=>'يجب اختيار احدى القارات',
+            'cont_num.required'=>'يجب اختيار احدى القارات',
+            'full_amnt_cont.required'=>'يجب اختيار احدى القارات',
+            'finn_type.required'=>'يجب اختيار احدى القارات',
+            'cont_end_date.required'=>'يجب اختيار احدى القارات',
+            'company.required'=>'يجب اختيار احدى القارات',
+
+
         ]
         );
     
@@ -98,13 +106,13 @@ class Contracts extends Component
         'upd_company'=>'required',
         
         ],[
-            'upd_finance'=>'required',
-            'upd_cont_date'=>'required',
-            'upd_cont_num'=>'required',
-            'upd_full_amnt_cont'=>'required',
-            'upd_finn_type'=>'required',
-            'upd_cont_end_date'=>'required',
-            'upd_excut_comp'=>'required',
+            'upd_finance.required'=>'',
+            'upd_cont_date.required'=>'يجب ادخال تاريخ العقد',
+            'upd_cont_num.required'=>'يجب ادخال رقم العقد',
+            'upd_full_amnt_cont.required'=>'يجب ادخال المبلغ الكلي للعقد',
+            'upd_finn_type.required'=>'يجب ادخال ',
+            'upd_cont_end_date.required'=>'required',
+            'upd_excut_comp.required'=>'required',
         ]);
 
         $update =Contract::find($cid)->update([

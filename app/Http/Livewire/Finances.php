@@ -110,15 +110,15 @@ class Finances extends Component
         'upd_fina_amnt_loc'=>'required',
         'upd_fina_amnt_for'=>'required',
         'upd_notes'=>'required'
-        ],['upd_proj_name'=>'required',
-        'upd_benifit_comp'=>'required',
-        'upd_assig_year'=>'required',
-        'upd_proj_cost'=>'required',
-        'upd_fina_type'=>'required',
-        'upd_fina_classfic'=>'required',
-        'upd_fina_amnt_loc'=>'required',
-        'upd_fina_amnt_for'=>'required',
-        'upd_notes'=>'required'
+        ],['finance.required'=>'يجب اختيار احدى القارات',
+        'upd_proj_name.required'=>'اسم المشروع مطلوب',
+        'upd_assig_year.required'=>'السنة مطلوبة',
+        'upd_proj_cost.required'=>'الكلفة مطلوبة',
+        'upd_fina_type.required'=>'يجب اختيار نوع التمويل',
+        'upd_fina_classfic.required'=>'يجب اختيار تبويب ',
+        'upd_fina_amnt_loc.required'=>'الرجاء ادخال تخصيص التبويب',
+        'upd_fina_amnt_for.required'=>'الرجاء ادخال تخصيص التبويب',
+
         ]);
 
         $update =Finance::find($cid)->update([
