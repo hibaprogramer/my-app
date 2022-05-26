@@ -44,6 +44,13 @@
                                 type="password"
                                 name="password_confirmation" required />
             </div>
+            <div>
+                <x-label for="gover" :value="__('gover')" />
+
+                <x-input id="gover" class="block mt-1 w-full" type="text" name="gover" :value="old('gover')" required autofocus />
+            </div>
+            
+           
 
             <div class="flex items-center justify-end mt-4">
                 <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
