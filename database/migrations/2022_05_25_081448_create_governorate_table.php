@@ -13,9 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('contracts', function (Blueprint $table) {
-            $table->dropColumn(['cont_subj', 'pay_condition','percentage','dscr']);
-            //
+        Schema::create('governorate', function (Blueprint $table) {
+            $table->id();
+            $table->string('gov_name');
+            $table->timestamps();
         });
     }
 
@@ -26,8 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('contracts', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('_governorate');
     }
 };
