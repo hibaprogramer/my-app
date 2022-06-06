@@ -13,9 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('contracts', function (Blueprint $table) {
-            $table->dropColumn(['cont_subj', 'pay_condition','percentage','dscr']);
-            //
+        Schema::create('subjects', function (Blueprint $table) {
+            $table->id();
+            $table->string('sub_name');
+            $table->integer('con_id');
+            $table->timestamps();
         });
     }
 
@@ -26,8 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('contracts', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('subjects');
     }
 };
