@@ -2,6 +2,7 @@
    
 
     <button class="btn btn-primary btn-sm mb-3" wire:click="OpenAddfinanceModal()">اضافة مشروع جديد</button>
+    <a class="btn btn-primary  btn-sm  mb-3" href="{{route('contracts')}}"> اضافة عقد جديد  </a>
     <div>
         @if ($checkedFinance)
             <button class="btn btn-danger" wire:click="deleteFinances()">حذف المشاريع المؤشرة ({{ count($checkedFinance) }})</button>
@@ -40,6 +41,7 @@
                         <div class="btn-group">
                             <button class="btn btn-danger btn-sm" wire:click='DeleteConfirm({{ $finance->id }})'>حذف</button>
                             <button class="btn btn-success btn-sm" wire:click='OpenEditFinanceModal({{ $finance->id }})'>تعديل</button>
+                            <button class="btn btn-primary btn-sm" wire:click="OpenAddContractModal({{ $finance->id }})"> عقد جديد</button>
                         </div>
                     </td>
                 </tr>

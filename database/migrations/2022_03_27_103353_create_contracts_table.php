@@ -16,11 +16,11 @@ return new class extends Migration
         Schema::create('contracts', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('fin_id');
-            $table->date('cont_date');//رقم العقد
+            $table->string('cont_date');//رقم العقد
             $table->integer('cont_num');//رقم العقد
             $table->integer('finn_type');// نوع العملة
             $table->integer('full_amnt_cont');//المبلغ الكلي
-            $table->date('cont_end_date');//تاريخ انتهاء العقد
+            $table->string('cont_end_date');//تاريخ انتهاء العقد
             $table->integer('excut_comp');//الشركة المنفذة
             $table->timestamps();
         });

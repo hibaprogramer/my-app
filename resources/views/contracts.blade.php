@@ -7,13 +7,13 @@
     <title>العقود</title>
     <link rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap.rtl.min.css') }}">
     <link rel="stylesheet" href="{{ asset('sweetalert2/sweetalart2.min.css') }}">
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
+    <script data-require="bootstrap@3.3.2" data-semver="3.3.2" src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <script data-require="jquery@2.1.3" data-semver="2.1.3" src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
     <!-- Styles -->
 <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 
 <!-- Scripts -->
-<script src="{{ asset('js/app.js') }}" defer></script>
-
+<script type="text/javascript">
     @livewireStyles
 </head>
 @include('layouts.navigation')
@@ -35,32 +35,13 @@
     <script src="{{ asset('sweetalert2/sweetalert2.min.js') }}"></script>
     <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
     @livewireScripts
-    <script>
+    
+<script type="text/javascript">
         window.addEventListener('OpenAddContractModal', function(){
             $('.addContract').find('span').html('');
             $('.addContract').find('form')[0].reset();
             $('.addContract').modal('show');
-            $("#from").datepicker({
-                showOn: "button",
-                buttonImage: "img/cal.jpeg",
-                buttonImageOnly: true,
-                dateFormat: "dd/mm/yy",
-                buttonText: "Select date",
-                onSelect: function(dateStr)
-                        {
-                            $("#to").datepicker("option", "minDate", dateStr)
-                        }
-            });
-
-            $("#to").datepicker({
-                showOn: "button",
-                buttonImage: "img/cal.jpeg",
-                buttonImageOnly: true,
-                dateFormat: "dd/mm/yy",
-                buttonText: "Select date"
-            });
         });
-
        window.addEventListener('CloseAddContractModal', function(){
             $('.addContract').find('span').html('');
             $('.addContract').find('form')[0].reset();
@@ -124,6 +105,9 @@
                 }
             })
        });
+
+
+        
 
     </script>
 </body>
