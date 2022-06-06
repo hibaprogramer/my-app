@@ -8,7 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class gover extends Model
 {
     use HasFactory;
-    protected $fillable = ['Gname'];
+    
+
+
+
 
    /*  public function govers()
     {
