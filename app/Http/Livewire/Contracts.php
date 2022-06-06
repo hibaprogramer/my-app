@@ -36,27 +36,29 @@ class Contracts extends Component
         $this->cont_end_date='';
         $this->company='';
         $this->dispatchBrowserEvent('OpenAddContractModal');
+        
     }
 
     public function save(){
         $this->validate([
+            'finance'=>'required',
             'cont_date'=>'required',
             'finn_type'=>'required',
             'cont_num'=>'required',
             'full_amnt_cont'=>'required',
-            'finn_type'=>'required',
+   
             'cont_end_date'=>'required',
             'company'=>'required',
            
             ]
         ,[
-            'cont_date.required'=>'يجب اختيار احدى القارات',
-            'finn_type.required'=>'يجب اختيار احدى القارات',
-            'cont_num.required'=>'يجب اختيار احدى القارات',
-            'full_amnt_cont.required'=>'يجب اختيار احدى القارات',
-            'finn_type.required'=>'يجب اختيار احدى القارات',
-            'cont_end_date.required'=>'يجب اختيار احدى القارات',
-            'company.required'=>'يجب اختيار احدى القارات',
+            'finance.required'=>'يجب اختيار اسم المشروع',
+            'cont_date.required'=>'يجب ادخال تاريخ العقد',
+            'finn_type.required'=>'يجب اختيار  نوع العقد',
+            'cont_num.required'=>'يجب ادخال رقم العقد',
+            'full_amnt_cont.required'=>'يجب ادخال المبلغ الكلي للعقد',
+            'cont_end_date.required'=>'يجب ادخال تاريخ  انتهاء العقد',
+            'company.required'=>'يجب اختيار الجهة المنفذة',
 
 
         ]
@@ -106,13 +108,13 @@ class Contracts extends Component
         'upd_company'=>'required',
         
         ],[
-            'upd_finance.required'=>'',
+            'upd_finance.required'=>'يجب ادخال اسم المشروع',
             'upd_cont_date.required'=>'يجب ادخال تاريخ العقد',
             'upd_cont_num.required'=>'يجب ادخال رقم العقد',
             'upd_full_amnt_cont.required'=>'يجب ادخال المبلغ الكلي للعقد',
-            'upd_finn_type.required'=>'يجب ادخال ',
-            'upd_cont_end_date.required'=>'required',
-            'upd_excut_comp.required'=>'required',
+            'upd_finn_type.required'=>'يجب ادخال نوع التمويل   ',
+            'upd_cont_end_date.required'=>'يجب ادخال تاريخ انتهاء العقد',
+            'upd_excut_comp.required'=>' يجب اخال الجهة المنفذه للعقد ',
         ]);
 
         $update =Contract::find($cid)->update([
