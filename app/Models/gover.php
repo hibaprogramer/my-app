@@ -5,11 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class gover extends Model
+class Gover extends Model
 {
     use HasFactory;
     
-
+    protected $fillable = [
+    'gove_id','gov_name'    ];
 
 
 

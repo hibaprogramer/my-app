@@ -3,30 +3,18 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use DB;
 
 class Govercontroller extends Controller
-{    public function dropDownShow(Request $request)
-
-    {
-    
-       $items = governorate::pluck('gov_name', 'id');
-    
-       $selectedID = 2;
-    
-       return view('register', compact('id', 'items'));
-    
-    }
+{    
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        //
-    }
+   
 
-    /**
+    /** 
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response

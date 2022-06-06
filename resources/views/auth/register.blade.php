@@ -1,4 +1,5 @@
 <x-guest-layout>
+
     <x-auth-card>
         <x-slot name="logo">
             <a href="/">
@@ -44,12 +45,18 @@
                                 type="password"
                                 name="password_confirmation" required />
             </div>
-            <div>
-                <x-label for="gover" :value="__('gover')" />
-
-                <x-input id="gover" class="block mt-1 w-full" type="text" name="gover" :value="old('gover')" required autofocus />
-            </div>
             
+            <div class="mt-4">
+                <x-label for="gover" :value="__('Gover')" />
+
+                <x-select id="gover" class="block mt-1 w-full" name="gover"  required>
+                <option value="">اختر الدائرة</option>
+                    @foreach (App\Models\Gover::orderBy('gov_name','desc')->get() as $gover)
+                    
+                        <option value="{{ $gover->gov_name}}">{{ $gover->gov_name }}</option>
+                    @endforeach
+                </select>
+            </div>
            
 
             <div class="flex items-center justify-end mt-4">
