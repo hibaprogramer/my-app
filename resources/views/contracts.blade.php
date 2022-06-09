@@ -9,7 +9,8 @@
     <link rel="stylesheet" href="{{ asset('sweetalert2/sweetalart2.min.css') }}">
     <script data-require="bootstrap@3.3.2" data-semver="3.3.2" src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
     <script data-require="jquery@2.1.3" data-semver="2.1.3" src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
-    <!-- Styles -->
+    
+<!-- Styles -->
 <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 
 <!-- Scripts -->
@@ -36,6 +37,12 @@
     @livewireScripts
     
 <script type="text/javascript">
+
+        window.addEventListener('OpenAddSubjectModal', function(){
+            $('.addSubject').find('span').html('');
+            $('.addSubject').find('form')[0].reset();
+            $('.addSubject').modal('show');
+        });
         window.addEventListener('OpenAddContractModal', function(){
             $('.addContract').find('span').html('');
             $('.addContract').find('form')[0].reset();
@@ -103,6 +110,12 @@
                     window.livewire.emit('deleteCheckedContracts',event.detail.checkedIDs);
                 }
             })
+
+            window.addEventListener('OpenAddSubjectModal', function(){
+            $('.add').find('span').html('');
+            $('.addSubject').find('form')[0].reset();
+            $('.addSubject').modal('show');
+        });
        });
 
 
