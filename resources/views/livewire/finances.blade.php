@@ -2,13 +2,13 @@
    
 
     <button class="btn btn-primary btn-sm mb-3" wire:click="OpenAddfinanceModal()">اضافة مشروع جديد</button>
-    <a class="btn btn-primary  btn-sm  mb-3" href="{{route('contracts')}}"> اضافة عقد جديد  </a>
+  
     <div>
         @if ($checkedFinance)
             <button class="btn btn-danger" wire:click="deleteFinances()">حذف المشاريع المؤشرة ({{ count($checkedFinance) }})</button>
         @endif
     </div>
-<div class="table-responsive-lg">
+    <div class="table-responsive-lg">
     <table class="table table-hover table-bordered ">
         <thead class="thead-inverse">
             <tr>
@@ -22,9 +22,9 @@
                 <th>تخصيص التبويب (العملة المحلية )</th>
                 <th>تخصيص التبويب العملة الاجنبية</th>
                 <th>العملية</th>
-            </tr>
-            </thead>
-            <tbody>
+                </tr>
+                </thead>
+                <tbody>
 
                 @forelse($finances as $finance)
                 <tr class="{{ $this->IsChecked($finance->id) }}">
@@ -41,7 +41,7 @@
                         <div class="btn-group">
                             <button class="btn btn-danger btn-sm" wire:click='DeleteConfirm({{ $finance->id }})'>حذف</button>
                             <button class="btn btn-success btn-sm" wire:click='OpenEditFinanceModal({{ $finance->id }})'>تعديل</button>
-                            <button class="btn btn-primary btn-sm" wire:click="OpenAddContractModal({{ $finance->id }})"> عقد جديد</button>
+                            <button class="btn btn-primary btn-sm" wire:click="OpenAddContractModal()"> عقد جديد</button>
                         </div>
                     </td>
                 </tr>
@@ -49,9 +49,10 @@
                     <p>لا يوجد مشاريع</p>
                 @endforelse
 
-            </tbody>
+                </tbody>
     </table>
-</div>
+
     @include('modals.add-modal-p')
     @include('modals.edit-modal-p')
+    @include('modals.add-modal-s')
 </div>

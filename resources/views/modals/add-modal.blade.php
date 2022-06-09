@@ -27,7 +27,7 @@
                             </div>
 
                             <div class="col-md-9">
-                             <input   type="date" class="form-control"  max="{{$cont_end_date}}" placeholder="تاريخ العقد" wire:model="cont_date" >
+                             <input   type="date" class="form-control"  placeholder="تاريخ العقد" wire:model="cont_date" >
                             </div>
                         <span class="text-danger"> @error('cont_date') {{ $message }}@enderror</span>
                     </div>

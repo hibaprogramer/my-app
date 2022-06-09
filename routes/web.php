@@ -25,6 +25,11 @@ Route::get('/finances', function () {
     return view('finances');
 })->middleware(['auth'])->name('finances');
 
+
+Route::get('/subjects', function () {
+    return view('subjects');
+})->middleware(['auth'])->name('subjects');
+
 Route::get('/contracts', function () {
     return view('contracts');
 })->middleware(['auth'])->name('contracts');

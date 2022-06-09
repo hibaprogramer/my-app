@@ -4,20 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>العقود</title>
+    <title>المواضيع</title>
     <link rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap.rtl.min.css') }}">
     <link rel="stylesheet" href="{{ asset('sweetalert2/sweetalart2.min.css') }}">
     <script data-require="bootstrap@3.3.2" data-semver="3.3.2" src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
     <script data-require="jquery@2.1.3" data-semver="2.1.3" src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
-    
-<!-- Styles -->
+    <!-- Styles -->
 <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 
 <!-- Scripts -->
-<<<<<<< HEAD
-
-=======
->>>>>>> 49f804777b1dbacdce598428ee3bf6d16f45a616
     @livewireStyles
 </head>
 @include('layouts.navigation')
@@ -26,8 +21,8 @@
     <div class="container">
         <div class="row" style="margin-top: 45px">
             <div class="col-md-6 offset-md-3">
-                <h4>العقود</h4>
-                @livewire('contracts')
+                <h4>المواضيع</h4>
+                @livewire('subjects')
 
             </div>
         </div>
@@ -41,34 +36,16 @@
     @livewireScripts
     
 <script type="text/javascript">
-
         window.addEventListener('OpenAddSubjectModal', function(){
-            $('.addSubject').find('span').html('');
+            $('.add').find('span').html('');
             $('.addSubject').find('form')[0].reset();
             $('.addSubject').modal('show');
         });
-        window.addEventListener('OpenAddContractModal', function(){
-            $('.addContract').find('span').html('');
-            $('.addContract').find('form')[0].reset();
-            $('.addContract').modal('show');
-        });
-       window.addEventListener('CloseAddContractModal', function(){
-            $('.addContract').find('span').html('');
-            $('.addContract').find('form')[0].reset();
-            $('.addContract').modal('hide');
-            alert('تمت اضافة العقد جديد بنجاح');
-       });
-
-       window.addEventListener('OpenEditContractModal', function(event){
-            $('.editContract').find('span').html('');
-            $('.editContract').modal('show');
-       });
-
-       window.addEventListener('CloseEditContractModal', function(event){
-            $('.editContract').find('span').html('');
-            $('.editContract').find('form')[0].reset();
-            $('.editContract').modal('hide');
-            alert('تمت عملية تعديل البيانات بنجاح');
+       window.addEventListener('CloseAddSubjectModal', function(){
+            $('.addSubject').find('span').html('');
+            $('.addSubject').find('form')[0].reset();
+            $('.addSubject').modal('hide');
+            alert('تمت اضافة الموضوع الجديد بنجاح');
        });
 
        window.addEventListener('SwalConfirm', function(event){
@@ -97,7 +74,7 @@
            alert('تم حذف بيانات ');
        });
 
-       window.addEventListener('swal:deleteContracts', function(event){
+       window.addEventListener('swal:deleteSubjects', function(event){
             swal.fire({
                 title:event.detail.title,
                 html:event.detail.html,
@@ -111,15 +88,9 @@
                 allowOutsideClick:false
             }).then(function(result){
                 if(result.value){
-                    window.livewire.emit('deleteCheckedContracts',event.detail.checkedIDs);
+                    window.livewire.emit('deleteCheckedSubject',event.detail.checkedIDs);
                 }
             })
-
-            window.addEventListener('OpenAddSubjectModal', function(){
-            $('.add').find('span').html('');
-            $('.addSubject').find('form')[0].reset();
-            $('.addSubject').modal('show');
-        });
        });
 
 
