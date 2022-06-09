@@ -13,7 +13,7 @@
 <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 
 <!-- Scripts -->
-<script type="text/javascript">
+
     @livewireStyles
 </head>
 @include('layouts.navigation')
