@@ -7,7 +7,7 @@
             <button class="btn btn-danger" wire:click="deleteContracts()">حذف العقود المؤشرة ({{ count($checkedContract) }})</button>
         @endif
     </div>
-    <table class="table table-hover table-responsive">
+    <table class="table table-hover table-bordered ">
         <thead class="thead-inverse">
             <tr>
                 <th></th>
@@ -37,6 +37,7 @@
                         <div class="btn-group">
                             <button class="btn btn-danger btn-sm" wire:click='DeleteConfirm({{ $contract->id }})'>حذف</button>
                             <button class="btn btn-success btn-sm" wire:click='OpenEditContractModal({{ $contract->id }})'>تعديل</button>
+                           <button class="btn btn-primary btn-sm" wire:click='OpenAddSubjectModal()'>اضافة موضوع</button>
                         </div>
                     </td>
                 </tr>
@@ -49,4 +50,5 @@
 
     @include('modals.add-modal')
     @include('modals.edit-modal')
+    @include('modals.add-modal-s')
 </div>

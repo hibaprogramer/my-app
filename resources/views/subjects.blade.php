@@ -45,7 +45,7 @@
             $('.addSubject').find('span').html('');
             $('.addSubject').find('form')[0].reset();
             $('.addSubject').modal('hide');
-            alert('تمت اضافة العقد جديد بنجاح');
+            alert('تمت اضافة الموضوع الجديد بنجاح');
        });
 
        window.addEventListener('SwalConfirm', function(event){
@@ -88,7 +88,7 @@
                 allowOutsideClick:false
             }).then(function(result){
                 if(result.value){
-                    window.livewire.emit('deleteCheckedSubjects',event.detail.checkedIDs);
+                    window.livewire.emit('deleteCheckedSubject',event.detail.checkedIDs);
                 }
             })
        });

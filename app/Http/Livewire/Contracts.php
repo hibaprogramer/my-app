@@ -6,6 +6,7 @@ use Livewire\Component;
 use App\Models\Finance;
 use App\Models\Contract;
 use App\Models\Company;
+use App\Models\Subject;
 
 class Contracts extends Component
 {   
@@ -14,6 +15,7 @@ class Contracts extends Component
 
     public $upd_finance,$upd_cont_date,$upd_cont_num,$upd_full_amnt_cont,$upd_cont_end_date,$upd_finn_type,
     $upd_company;
+    public $sub_name;
 
     public $listeners = ['delete', 'deleteCheckedContract'];
     public $checkedContract = [];
@@ -23,7 +25,8 @@ class Contracts extends Component
         return view('livewire.contracts',[
             'finances'=>Finance::orderby('assig_year','asc')->get(),
             'contracts'=>Contract::orderby('cont_date','asc')->get(),
-            'companies'=>Company::orderby('comp_name','asc')->get()
+            'companies'=>Company::orderby('comp_name','asc')->get(),
+           
         ]);
     }
 
@@ -167,4 +170,14 @@ class Contracts extends Component
     public function IsChecked($contractId){
         return in_array($contractId, $this->checkedContract) ? 'bg-info text-white' : '';
     }
+
+
+    
+    public function OpenAddSubjectModal(){
+        $this->sub_name='';
+        
+        $this->dispatchBrowserEvent('OpenAddSubjectModal()');
+        
+    
+}
 }

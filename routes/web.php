@@ -34,3 +34,4 @@ Route::get('/contracts', function () {
     return view('contracts');
 })->middleware(['auth'])->name('contracts');
 require __DIR__.'/auth.php';
+

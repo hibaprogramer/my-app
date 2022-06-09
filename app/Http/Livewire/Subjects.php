@@ -14,8 +14,8 @@ class subjects extends Component
 
     
 
-    public $listeners = ['delete', 'deleteCheckedContract'];
-    public $checkedContract = [];
+    public $listeners = ['delete', 'deletecheckedSubject'];
+    public $checkedSubject = [];
 
     public function render()
     {
@@ -49,7 +49,7 @@ class subjects extends Component
             
             if($save){
                 $this->dispatchBrowserEvent('CloseAddSubjectModal');
-                $this->checkedContract = [];
+                $this->checkedSubject = [];
             }
         
     }
@@ -69,20 +69,20 @@ class subjects extends Component
         if($del){
             $this->dispatchBrowserEvent('deleted');
         }
-        $this->checkedContract = [];
+        $this->checkedSubject = [];
     }
 
     public function deleteSubjects(){
         $this->dispatchBrowserEvent('swal:deleteContracts',[
             'title'=>'هل انت متأكد؟',
             'html'=>'من حذف هذه المواضيع',
-            'checkedIDs'=>$this->checkedContract,
+            'checkedIDs'=>$this->checkedSubject,
         ]);
     }
 
     public function deleteCheckedٍSubjects($ids){
         sUBJECTS::whereKey($ids)->delete();
-        $this->checkedContract = [];
+        $this->checkedSubject = [];
     }
 
     public function IsChecked($subjectId){

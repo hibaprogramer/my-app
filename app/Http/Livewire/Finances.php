@@ -5,6 +5,8 @@ namespace App\Http\Livewire;
 use Livewire\Component;
 use App\Models\Finance;
 use App\Models\Contract;
+use App\Models\Company;
+
 
 class Finances extends Component
 {   
@@ -13,6 +15,13 @@ class Finances extends Component
 
     public $upd_proj_name,$upd_assig_year,$upd_proj_cost,$upd_fina_type,$upd_fina_classfic,$upd_fina_amnt_loc,$upd_fina_amnt_for,$upd_notes;
 
+    public $finance,$cont_date,$cont_num,$full_amnt_cont,$cont_end_date,$finn_type,
+    $company;
+
+    
+
+    
+
     public $listeners = ['delete', 'deleteCheckedFinance'];
     public $checkedFinance = [];
     public function render()
@@ -20,6 +29,8 @@ class Finances extends Component
     {
         return view('livewire.Finances',[
             'finances'=>Finance::orderby('assig_year','asc')->get(),
+            'contracts'=>Contract::orderby('cont_date','asc')->get(),
+            'companies'=>Company::orderby('comp_name','asc')->get(),
             
         ]);
     }
@@ -38,7 +49,7 @@ class Finances extends Component
         $this->dispatchBrowserEvent('OpenAddfinanceModal');
     }
 
-    public function save(){
+    public function save1(){
         $this->validate([
             'proj_name'=>'required',
             'assig_year'=>'required',
@@ -179,6 +190,19 @@ class Finances extends Component
 
         
     }
+    public function OpenAddContractModal(){
+        $this->finance='';
+        $this->cont_date='';
+        $this->cont_num='';
+        $this->full_amnt_cont='';
+        $this->finn_type='';
+        $this->cont_end_date='';
+        $this->company='';
+        $this->dispatchBrowserEvent('OpenAddContractModal');
+        
+    }
+
+   
 
 
 }

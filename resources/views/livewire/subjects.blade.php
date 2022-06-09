@@ -1,7 +1,7 @@
 <div>
     <div>
         @if ($checkedSubject)
-            <button class="btn btn-danger" wire:click="deleteSubjects()">حذف المواضيع المؤشرة ({{ count($checkedSubject) }})</button>
+            <button class="btn btn-danger" wire:click="deleteSubjects()">حذف المواضيع المؤشرة ({{ count($CheckedSubject) }})</button>
         @endif
     </div>
     <table class="table table-hover table-responsive">
@@ -37,4 +37,5 @@
 
             </tbody>
     </table>
+ 
 </div>
