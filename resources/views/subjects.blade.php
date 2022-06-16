@@ -21,7 +21,8 @@
     <div class="container">
         <div class="row" style="margin-top: 45px">
             <div class="col-md-6 offset-md-3">
-                <h4>المواضيع</h4>
+                <h1>المواضيع</h1>
+                <br>
                 @livewire('subjects')
 
             </div>
@@ -37,7 +38,7 @@
     
 <script type="text/javascript">
         window.addEventListener('OpenAddSubjectModal', function(){
-            $('.add').find('span').html('');
+            $('.addSubject').find('span').html('');
             $('.addSubject').find('form')[0].reset();
             $('.addSubject').modal('show');
         });
