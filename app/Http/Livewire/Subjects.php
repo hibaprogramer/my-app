@@ -9,10 +9,7 @@ use App\Models\Subject;
 
 class subjects extends Component
 {   
-    public $con_id,$sub_name;
-
-
-    
+    public $con_id,$sub_name, $contract , $finance;
 
     public $listeners = ['delete', 'deletecheckedSubject'];
     public $checkedSubject = [];

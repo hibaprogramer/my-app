@@ -32,7 +32,7 @@
                     </td>
                 </tr>
                 @empty
-                    <code>لا توجد دول</code>
+                    <code>لا توجد مواضيع</code>
                 @endforelse
 
             </tbody>

@@ -1,4 +1,5 @@
 <div>
+    <button class="btn btn-primary btn-sm mb-3" wire:click="OpenAddSubjectModal()">اضافة موضوع جديد</button>
     <div>
         @if ($checkedSubject)
             <button class="btn btn-danger" wire:click="deleteSubjects()">حذف المواضيع المؤشرة ({{ count($CheckedSubject) }})</button>
@@ -8,9 +9,10 @@
         <thead class="thead-inverse">
             <tr>
                 <th></th>
-                <th>اسم المشروع</th>
-                <th>رقم العقد</th>
+                {{-- <th>اسم المشروع</th> --}}
                 <th>الموضوع</th>
+                <th>رقم العقد</th>
+                
                
             </tr>
             </thead>
@@ -19,9 +21,10 @@
                 @forelse($subjects as $subject)
                 <tr class="{{ $this->IsChecked($subject->id) }}">
                     <td><input type="checkbox" value="{{ $subject->id }}" wire:model="checkedSubject"></td>
-                    <td>{{ $subject->$contract->finance->proj_name }}</td>
-                    <td>{{ $subject->contract->cont_num }}</td>
+                    {{-- <td>{{ $subject->contract->finance->proj_name }}</td> --}}
                     <td>{{ $subject->sub_name }}</td>
+                    <td>{{ $subject->con_id}}</td>
+                    
                     
                    
                     <td>
@@ -32,7 +35,7 @@
                     </td>
                 </tr>
                 @empty
-                    <p>لا يوجدمواضيع</p>
+                    <p>لا يوجد مواضيع</p>
                 @endforelse
 
             </tbody>
